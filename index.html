@@ -6,27 +6,27 @@
 <!-- ✅ Mobile scaling -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- ✅ Auto refresh -->
+<!-- ✅ Auto refresh every 5 minutes -->
 <meta http-equiv="refresh" content="300">
 
 <style>
 
-/* ✅PAGE */
+/* ✅ PAGE */
 body {
   font-family: Arial;
   padding: 20px;
   background-color: #FFFDEF;
 }
 
-/* ✅TABLE BASE */
+/* ✅ TABLE BASE */
 table {
   border-collapse: collapse;
   width: 100%;
   margin-top: 10px;
-  min-width: 900px; /* ✅ keeps layout from squishing */
+  min-width: 900px;
 }
 
-/* ✅CELLS */
+/* ✅ CELLS */
 th, td {
   border: 1px solid #ddd;
   padding: 8px;
@@ -34,7 +34,7 @@ th, td {
   text-align: left;
 }
 
-/* ✅HEADER */
+/* ✅ HEADER */
 th {
   background-color: #004279;
   color: white;
@@ -44,17 +44,17 @@ th {
   font-size: 12px;
 }
 
-/* ✅ROW STRIPES */
+/* ✅ ROW STRIPES */
 tr:nth-child(even) {
   background-color: #f2f2f2;
 }
 
-/* ✅HOVER */
+/* ✅ HOVER */
 tr:hover {
   background-color: #e6f2ff;
 }
 
-/* ✅FREEZE FIRST COLUMN */
+/* ✅ FREEZE FIRST COLUMN */
 th:nth-child(1), td:nth-child(1) {
   position: sticky;
   left: 0;
@@ -62,7 +62,7 @@ th:nth-child(1), td:nth-child(1) {
   z-index: 2;
 }
 
-/* ✅KEEP HEADER ABOVE */
+/* ✅ KEEP HEADER ABOVE */
 th:nth-child(1) {
   z-index: 4;
   background-color: #004279;
@@ -80,7 +80,7 @@ th:nth-child(6), td:nth-child(6) {
   text-align: center;
 }
 
-/* ✅ ================= MOBILE ================= */
+/* ✅ MOBILE OPTIMIZATION */
 @media screen and (max-width: 768px) {
 
   body {
@@ -96,48 +96,25 @@ th:nth-child(6), td:nth-child(6) {
     padding: 6px;
   }
 
-  /* ✅ Banner stacks nicely */
+  table {
+    min-width: 800px;
+  }
+
   .banner {
-    flex-direction: column;
-    align-items: flex-start;
+    flex-wrap: wrap;
     gap: 10px;
   }
 
   .banner img {
-    height: 50px;
+    height: 55px;
   }
 
-  /* ✅ CARD VIEW (STACK TABLE ROWS) */
-  table, thead, tbody, th, td, tr {
-    display: block;
-    width: 100%;
-  }
+}
 
-  thead {
-    display: none; /* hide header row */
-  }
-
-  tr {
-    margin-bottom: 15px;
-    background: white;
-    border-radius: 6px;
-    padding: 10px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  }
-
-  td {
-    border: none;
-    display: flex;
-    justify-content: space-between;
-    padding: 6px 0;
-    font-size: 12px;
-  }
-
-  td::before {
-    font-weight: bold;
-    content: attr(data-label);
-  }
-
+/* ✅ ✅ SMOOTH SCROLL (THIS IS THE KEY ADD) */
+.table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 </style>
@@ -170,20 +147,22 @@ th:nth-child(6), td:nth-child(6) {
 <h1>Open Events for Sign Up</h1>
 
 <p style="margin-top:10px; margin-bottom:10px; color:#555; font-size:12px;">
-⏱ Last updated: June 9, 2026 • 12:06 PM
+⏱ Last updated: June 12, 2026 • 4:12 PM
 </p>
 
 <p style="font-size:11px; color:#888; margin-top:0; margin-bottom:15px;">
 🔄 Auto-refreshes every 5 minutes
 </p>
 
-<!-- ✅ SCROLL WRAPPER -->
-<div style="overflow-x:auto;">
+<!-- ✅ ✅ SCROLL WRAPPER (UPDATED) -->
+<div class="table-wrapper">
+
 <table><thead><tr><th>Date</th><th>Times</th><th>Organization</th><th>Event Name</th><th>Location</th><th>Sign Up Link</th><th>Sport</th><th>Point Person</th><th>Add&#39;l Details</th></tr></thead><tbody><tr><td>8/16/2025 (Saturday)</td><td>12:00 PM to 7:00 PM</td><td>NDGP</td><td>Fall Gap Coverage</td><td>3417 Church Rd. Easton</td><td></td><td>Multiple</td><td>Markley, Stasia</td><td>9-11 px &amp; 11/12:30 bsc games</td></tr><tr><td>8/18/2025 (Monday)</td><td>7:00 PM to 9:00 PM</td><td>Swain</td><td>Fall Gap Coverage</td><td>Swain: 1101 S 24th St, Allentown</td><td></td><td>Multiple</td><td>Markley, Stasia</td><td>Practices begin @ 3:15</td></tr><tr><td>8/31/2025 (Sunday)</td><td>12:45 PM to 6:30 PM</td><td>City of Easton Lil Rovers</td><td>Youth FB Games</td><td>Heil Community Park</td><td></td><td>Youth Football</td><td>Cotter, Amy B</td><td>Flag 9, PW 12, JV 1:30</td></tr><tr><td>9/2/2025 (Tuesday)</td><td>7:00 PM to 7:00 PM</td><td>Swain</td><td>Fall Gap Coverage</td><td>1101 S 24th St, Allentown, PA 18103</td><td></td><td>Multiple</td><td>Markley, Stasia</td><td>Practices begin @ 3:15</td></tr><tr><td>11/8/2025 (Saturday)</td><td>12:30 PM to 5:00 PM</td><td>Easton Cheerleading Comp</td><td>Cheer Comp</td><td>Easton MS</td><td></td><td>Cheer</td><td>Markley, Stasia</td><td></td></tr><tr><td>11/21/2025 (Friday)</td><td>6:30 PM to 12:00 AM</td><td>Pen Argyl</td><td>Fall Gap Coverage</td><td>Pen Argyl HS</td><td></td><td>Basketball</td><td>Markley, Stasia</td><td></td></tr><tr><td>12/6/2025 (Saturday)</td><td>12:45 PM to 5:00 PM</td><td>Nazareth</td><td>Fall Gap Coverage</td><td>Nazareth Middle School</td><td></td><td>Multiple</td><td>Baraciarte, Jacqueline</td><td></td></tr><tr><td>6/15/2026 (Monday)</td><td>9:45 PM to 12:00 AM</td><td>Nazareth Wrestling Booster Club</td><td>Nazareth Youth Girls Wrestling Camp</td><td></td><td></td><td>Youth Wrestling</td><td>Markley, Stasia</td><td></td></tr><tr><td>6/16/2026 (Tuesday)</td><td>9:45 PM to 12:00 AM</td><td>Nazareth Wrestling Booster Club</td><td>Nazareth Youth Girls Wrestling Camp</td><td></td><td></td><td>Youth Wrestling</td><td>Markley, Stasia</td><td></td></tr><tr><td>6/17/2026 (Wednesday)</td><td>9:45 PM to 12:00 AM</td><td>Nazareth Wrestling Booster Club</td><td>Nazareth Youth Girls Wrestling Camp</td><td></td><td></td><td>Youth Wrestling</td><td>Markley, Stasia</td><td></td></tr><tr><td>6/18/2026 (Thursday)</td><td>9:45 PM to 12:00 AM</td><td>Nazareth Wrestling Booster Club</td><td>Nazareth Youth Girls Wrestling Camp</td><td></td><td></td><td>Youth Wrestling</td><td>Markley, Stasia</td><td></td></tr><tr><td>12/30/2026 (Wednesday)</td><td>1:00 PM to 4:00 PM</td><td>Forks Township Athletic Association</td><td>Youth Wrestling Match</td><td>Wilson Middle School</td><td></td><td>Youth Wrestling</td><td>Markley, Stasia</td><td></td></tr></tbody></table>
+``
+
 </div>
 
 </div>
 
 </body>
 </html>
-``
