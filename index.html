@@ -9,7 +9,40 @@
 
 <style>
 
+/* ✅FILTERS */
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 15px;
+}
 
+.filters input,
+.filters select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.filters input {
+  flex: 1;
+  min-width: 220px;
+}
+
+.filters select {
+  min-width: 180px;
+}
+
+/* ✅SORTABLE HEADERS */
+.sortable {
+  cursor: pointer;
+}
+
+.sortable:hover {
+  background-color: #005caa;
+}
+`
 
 /* ✅ PAGE */
 body {
@@ -157,41 +190,168 @@ setInterval(function() {
 
 
 <p style="margin-top:10px; margin-bottom:15px; color:#555; font-size:12px;">
-⏱ Last Updated: July 14, 2026 • 11:12 AM
+⏱ Last Updated: July 14, 2026 • 2:42 PM
 <br>
 🔄 Updates automatically (typically within ~1 minute of changes)
 </p>
 
 
 <!-- ✅ ✅ SCROLL WRAPPER (UPDATED) -->
+<div class="filters">
+  <input
+    type="text"
+    id="tableSearch"
+    placeholder="🔍 Search all events..."
+  >
+
+  <select id="sportFilter">
+    <option value="">All Sports</option>
+  </select>
+
+</div>
 <div class="table-wrapper">
 
 <table><thead><tr><th>Date</th><th>Times</th><th>Organization</th><th>Event Name</th><th>Location</th><th>Sign Up Link</th><th>Sport</th><th>Point Person</th><th>Add&#39;l Details</th></tr></thead><tbody><tr><td>8/23/2026 (Sunday)</td><td>2:45 PM to 9:00 PM</td><td>Green &amp; White Youth Assoc</td><td>Youth FB Games</td><td>Pen Argyl Stadium, 501 W Laurel Ave, Pen Argyl, PA 18072</td><td>https://forms.office.com/Pages/ResponsePage.aspx?id=-NJP75ZMq0WbFXgxkg9Vz6BeesZ4855HlzsoKTdcgV5UOUxWQzlJWTI0SlpZQ1pQRlQxTTU2WlhRQi4u&amp;r20ed42c6c3664085bdeb35d1fa757913=265</td><td>Youth Football</td><td>Markley, Stasia</td><td>First game starts at 10 am. 5 games total.</td></tr><tr><td>8/29/2026 (Saturday)</td><td>1:45 PM to 7:30 PM</td><td>Nazareth Clippers</td><td>Youth FB Games</td><td>Lower Nazareth Park, 306 Butztown Rd, Bethlehem, PA 18020</td><td>https://forms.office.com/Pages/ResponsePage.aspx?id=-NJP75ZMq0WbFXgxkg9Vz6BeesZ4855HlzsoKTdcgV5UOUxWQzlJWTI0SlpZQ1pQRlQxTTU2WlhRQi4u&amp;r20ed42c6c3664085bdeb35d1fa757913=281</td><td>Youth Football</td><td>Markley, Stasia</td><td>Games at 10 am, 11:15, 12:30, &amp; 2</td></tr><tr><td>8/30/2026 (Sunday)</td><td>2:45 PM to 9:00 PM</td><td>Green &amp; White Youth Assoc</td><td>Youth FB Games</td><td>Pen Argyl Stadium, 501 W Laurel Ave, Pen Argyl, PA 18072</td><td>https://forms.office.com/Pages/ResponsePage.aspx?id=-NJP75ZMq0WbFXgxkg9Vz6BeesZ4855HlzsoKTdcgV5UOUxWQzlJWTI0SlpZQ1pQRlQxTTU2WlhRQi4u&amp;r20ed42c6c3664085bdeb35d1fa757913=266</td><td>Youth Football</td><td>Markley, Stasia</td><td>First game starts at 10 am. 5 games total.</td></tr><tr><td>9/19/2026 (Saturday)</td><td>1:45 PM to 7:30 PM</td><td>Nazareth Clippers</td><td>Youth FB Games</td><td>Lower Nazareth Park, 306 Butztown Rd, Bethlehem, PA 18020</td><td>https://forms.office.com/Pages/ResponsePage.aspx?id=-NJP75ZMq0WbFXgxkg9Vz6BeesZ4855HlzsoKTdcgV5UOUxWQzlJWTI0SlpZQ1pQRlQxTTU2WlhRQi4u&amp;r20ed42c6c3664085bdeb35d1fa757913=282</td><td>Youth Football</td><td>Markley, Stasia</td><td>Games at 10 am, 11:15, 12:30, &amp; 2</td></tr><tr><td>9/20/2026 (Sunday)</td><td>2:45 PM to 9:00 PM</td><td>Green &amp; White Youth Assoc</td><td>Youth FB Games</td><td>Pen Argyl Stadium, 501 W Laurel Ave, Pen Argyl, PA 18072</td><td>https://forms.office.com/Pages/ResponsePage.aspx?id=-NJP75ZMq0WbFXgxkg9Vz6BeesZ4855HlzsoKTdcgV5UOUxWQzlJWTI0SlpZQ1pQRlQxTTU2WlhRQi4u&amp;r20ed42c6c3664085bdeb35d1fa757913=267</td><td>Youth Football</td><td>Markley, Stasia</td><td>First game starts at 10 am. 5 games total.</td></tr><tr><td>9/26/2026 (Saturday)</td><td>1:45 PM to 7:30 PM</td><td>Nazareth Clippers</td><td>Youth FB Games</td><td>Lower Nazareth Park, 306 Butztown Rd, Bethlehem, PA 18020</td><td>https://forms.office.com/Pages/ResponsePage.aspx?id=-NJP75ZMq0WbFXgxkg9Vz6BeesZ4855HlzsoKTdcgV5UOUxWQzlJWTI0SlpZQ1pQRlQxTTU2WlhRQi4u&amp;r20ed42c6c3664085bdeb35d1fa757913=283</td><td>Youth Football</td><td>Markley, Stasia</td><td>Games at 10 am, 11:15, 12:30, &amp; 2</td></tr><tr><td>10/10/2026 (Saturday)</td><td>1:45 PM to 7:30 PM</td><td>Nazareth Clippers</td><td>Youth FB Games</td><td>Lower Nazareth Park, 306 Butztown Rd, Bethlehem, PA 18020</td><td>https://forms.office.com/Pages/ResponsePage.aspx?id=-NJP75ZMq0WbFXgxkg9Vz6BeesZ4855HlzsoKTdcgV5UOUxWQzlJWTI0SlpZQ1pQRlQxTTU2WlhRQi4u&amp;r20ed42c6c3664085bdeb35d1fa757913=284</td><td>Youth Football</td><td>Markley, Stasia</td><td>Games at 10 am, 11:15, 12:30, &amp; 2</td></tr><tr><td>10/10/2026 (Saturday)</td><td>1:45 PM to 7:30 PM</td><td>Nazareth Clippers</td><td>Youth FB Games</td><td>Lower Nazareth Park, 306 Butztown Rd, Bethlehem, PA 18020</td><td>https://forms.office.com/Pages/ResponsePage.aspx?id=-NJP75ZMq0WbFXgxkg9Vz6BeesZ4855HlzsoKTdcgV5UOUxWQzlJWTI0SlpZQ1pQRlQxTTU2WlhRQi4u&amp;r20ed42c6c3664085bdeb35d1fa757913=311</td><td>Youth Football</td><td></td><td>Games at 10 am, 11:15, 12:30, &amp; 2</td></tr><tr><td>10/11/2026 (Sunday)</td><td>2:45 PM to 9:00 PM</td><td>Green &amp; White Youth Assoc</td><td>Youth FB Games</td><td>Pen Argyl Stadium, 501 W Laurel Ave, Pen Argyl, PA 18072</td><td>https://forms.office.com/Pages/ResponsePage.aspx?id=-NJP75ZMq0WbFXgxkg9Vz6BeesZ4855HlzsoKTdcgV5UOUxWQzlJWTI0SlpZQ1pQRlQxTTU2WlhRQi4u&amp;r20ed42c6c3664085bdeb35d1fa757913=268</td><td>Youth Football</td><td>Markley, Stasia</td><td>First game starts at 10 am. 5 games total.</td></tr><tr><td>10/25/2026 (Sunday)</td><td>2:45 PM to 9:00 PM</td><td>Green &amp; White Youth Assoc</td><td>Youth FB Games</td><td>Pen Argyl Stadium, 501 W Laurel Ave, Pen Argyl, PA 18072</td><td>https://forms.office.com/Pages/ResponsePage.aspx?id=-NJP75ZMq0WbFXgxkg9Vz6BeesZ4855HlzsoKTdcgV5UOUxWQzlJWTI0SlpZQ1pQRlQxTTU2WlhRQi4u&amp;r20ed42c6c3664085bdeb35d1fa757913=269</td><td>Youth Football</td><td>Markley, Stasia</td><td>First game starts at 10 am. 5 games total.</td></tr></tbody></table>
-``
+
 
 </div>
 
 </div>
 <script>
 document.addEventListener("DOMContentLoaded", function() {
-  // Find the table
+
   var table = document.querySelector("table");
 
   if (!table) return;
 
-  // Loop through rows (skip header)
+  // Convert Sign Up URL into clickable link
   for (var i = 1; i < table.rows.length; i++) {
-    var cell = table.rows[i].cells[5]; // 👈 Sign Up column index (adjust if needed)
+
+    var cell = table.rows[i].cells[5];
 
     if (!cell) continue;
 
     var url = cell.textContent.trim();
-    console.log("Cell value:", url);
-    // If it looks like a URL, replace it
+
     if (url.startsWith("http")) {
-     cell.innerHTML = '<a href="' + url + '" target="_blank" style="color:#005A9C; text-decoration:none; font-weight:bold; white-space:nowrap;">📝 Sign Up</a>';
+
+      cell.innerHTML =
+        '<a href="' + url +
+        '" target="_blank" style="color:#005A9C;text-decoration:none;font-weight:bold;white-space:nowrap;">📝 Sign Up</a>';
+
     }
   }
+
+  // Build Sport Dropdown
+  var sportFilter = document.getElementById("sportFilter");
+  var sports = new Set();
+
+  for (var i = 1; i < table.rows.length; i++) {
+
+    var sportCell = table.rows[i].cells[6];
+
+    if (sportCell) {
+      sports.add(sportCell.textContent.trim());
+    }
+  }
+
+  Array.from(sports)
+    .sort()
+    .forEach(function(sport) {
+
+      var option = document.createElement("option");
+
+      option.value = sport;
+      option.textContent = sport;
+
+      sportFilter.appendChild(option);
+
+    });
+
+  // Search + Filter
+  function filterTable() {
+
+    var search =
+      document
+        .getElementById("tableSearch")
+        .value
+        .toLowerCase();
+
+    var sport =
+      sportFilter.value.toLowerCase();
+
+    for (var i = 1; i < table.rows.length; i++) {
+
+      var row = table.rows[i];
+
+      var rowText =
+        row.textContent.toLowerCase();
+
+      var rowSport =
+        row.cells[6].textContent.toLowerCase();
+
+      var searchMatch =
+        rowText.indexOf(search) > -1;
+
+      var sportMatch =
+        sport === "" ||
+        rowSport === sport;
+
+      row.style.display =
+        (searchMatch && sportMatch)
+          ? ""
+          : "none";
+
+    }
+  }
+
+  document
+    .getElementById("tableSearch")
+    .addEventListener("keyup", filterTable);
+
+  sportFilter
+    .addEventListener("change", filterTable);
+
+  // Sortable Columns
+  var headers = table.querySelectorAll("th");
+
+  headers.forEach(function(header, index) {
+
+    header.classList.add("sortable");
+
+    header.addEventListener("click", function() {
+
+      var rows =
+        Array.from(table.rows).slice(1);
+
+      var ascending =
+        header.dataset.order !== "asc";
+
+      rows.sort(function(a, b) {
+
+        var A =
+          a.cells[index].textContent.trim();
+
+        var B =
+          b.cells[index].textContent.trim();
+
+        return ascending
+          ? A.localeCompare(B)
+          : B.localeCompare(A);
+
+      });
+
+      rows.forEach(function(row) {
+        table.tBodies[0].appendChild(row);
+      });
+
+      header.dataset.order =
+        ascending ? "asc" : "desc";
+
+    });
+
+  });
+
 });
 </script>
 </body>
